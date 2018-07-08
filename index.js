@@ -14,9 +14,10 @@ client.on('ready', () => {
   console.log('le prefix est: ' + setting.prefix)
 })
 
-//ARRIVER DEPARTS
-const arv = require('./module/arriverdeparts.js')
-arv(client)
+/*ARRIVER DEPARTS
+ * const arv = require('./module/arriverdeparts.js')
+ * arv(client)
+ */
 
 client.on('message', message => {
   if (message.author.bot) return
