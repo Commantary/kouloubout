@@ -15,8 +15,8 @@ client.on('ready', () => {
 })
 
 //ARRIVER DEPARTS
-const arv = require('./module/arriverdeparts.js')
-arv(client)
+//const arv = require('./module/arriverdeparts.js')
+//arv(client)
 
 client.on('message', message => {
   if (message.author.bot) return
