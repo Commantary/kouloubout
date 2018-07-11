@@ -21,7 +21,7 @@ got.get(bdd, {
 			var caseBob = capitalize(message.content.substr(8))
 
 			console.log(capitalize(message.content.substr(8)))
-			if (name_to_number[lowerCaseBob] !== undefined){
+			if (name_to_number[lowerCaseBob] !== undefined && body[message.author.id].bob[caseBob] !== "0"){
 				console.log(3)
 
 				body[message.author.id].bob_principale = caseBob
