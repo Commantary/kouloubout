@@ -22,6 +22,10 @@ got.get(bdd, {
 				console.log(3)
 
 				body[message.author.id].bob_principale = caseBob
+				return message.channel.send({embed: {
+					color: 15922601,
+					description: "Votre bob principale est maintenant: **" + caseBob + "**"
+				}})
 
 			} else {
 				return message.channel.send({embed: {
