@@ -21,14 +21,21 @@ got.get(bdd, {
 			var caseBob = capitalize(message.content.substr(8))
 
 			console.log(capitalize(message.content.substr(8)))
-			if (name_to_number[lowerCaseBob] !== undefined && body[message.author.id].bob[caseBob] !== "0"){
+			if (name_to_number[lowerCaseBob] !== undefined){
 				console.log(3)
+				if (body[message.author.id].bob[name_to_number[lowerCaseBob]].number !== "0"){
 
-				body[message.author.id].bob_principale = caseBob
-				message.channel.send({embed: {
-					color: 15922601,
-					description: "Votre bob principale est maintenant: **" + caseBob + "**"
-				}})
+					body[message.author.id].bob_principale = caseBob
+					message.channel.send({embed: {
+						color: 15922601,
+						description: "Votre bob principale est maintenant: **" + caseBob + "**"
+					}})
+				} else {
+					return message.channel.send({embed: {
+						color: 16406616,
+						description: "Vous n'avez pas le bob spécifier"
+					}})
+				}
 
 			} else {
 				return message.channel.send({embed: {
