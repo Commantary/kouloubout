@@ -58,7 +58,7 @@ got.get(bdd, {
 			}
 		}
 
-		return message.channel.send({embed: {
+		message.channel.send({embed: {
 			color: 15922601,
 			description: "Votre compte bober **" + message.author.username + "** a bien été créer"
 		}});
