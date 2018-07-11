@@ -14,10 +14,13 @@ got.get(bdd, {
 	if (args[0] !== undefined){
 		console.log(1)
 		if (body[message.author.id] !== undefined){
+			capitalize = function(str1){
+				return str1.charAt(0).toUpperCase() + str1.slice(1);
+			}
 			var lowerCaseBob = message.content.substr(8).toLowerCase()
-			var caseBob = message.content.substr(8, 9).toUpperCase() + "" + message.content.substr(9).toLowerCase()
+			var caseBob = capitalize(message.content.substr(8))
 
-			console.log(message.content.substr(8).toLowerCase())
+			console.log(capitalize(message.content.substr(8)))
 			if (name_to_number[lowerCaseBob] !== undefined){
 				console.log(3)
 
