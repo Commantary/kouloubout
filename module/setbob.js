@@ -15,14 +15,33 @@ got.get(bdd, {
 		console.log(1)
 		if (body[message.author.id] !== undefined){
 			var lowerCaseBob = message.content.substr(8).toLowerCase()
+			var caseBob = message.content.substr(8, 9).toUpperCase() + "" message.content.substr(9).toLowerCase()
 
 			console.log(message.content.substr(8).toLowerCase())
 			if (name_to_number[lowerCaseBob] !== undefined){
 				console.log(3)
 
-				body[message.author.id].bob_principale = message.content.substr(8)
+				body[message.author.id].bob_principale = caseBob
+
+			} else {
+				return message.channel.send({embed: {
+					color: 16406616,
+					description: "Le bob spécifier n'existe pas ou n'est pas bien écrit"
+				}})
 			}
+
+		} else {
+			return message.channel.send({embed: {
+				color: 16406616,
+				description: "Vous n'avez pas de compte bober"
+			}})
 		}
+
+	} else {
+		return message.channel.send({embed: {
+			color: 16406616,
+			description: "Vous devez spécifier un bob !"
+		}})
 	}
 
 
