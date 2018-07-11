@@ -20,7 +20,7 @@ client.on('message', message => {
     var randBob = Math.floor(Math.random() * bob.number);
     var queue_url = process.env.QUEUE_URL || process.argv[2]
 
-    onsole.log("server: " + message.guild.name + " | channel: " + message.channel.name + " | rand: " + rand + " | randBob: " + randBob + " | author: " + message.author.username)
+    console.log("server: " + message.guild.name + " | channel: " + message.channel.name + " | rand: " + rand + " | randBob: " + randBob + " | author: " + message.author.username)
     if (rand === 5 && message.author.bot == false){//&& message.author.id == "214846601066315776"){
 
       var msg = message.channel.send({embed: {
