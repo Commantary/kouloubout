@@ -15,7 +15,7 @@ got.get(bdd, {
 		console.log(1)
 		if (body[message.author.id] !== undefined){
 			var lowerCaseBob = message.content.substr(8).toLowerCase()
-			var caseBob = message.content.substr(8, 9).toUpperCase() + "" message.content.substr(9).toLowerCase()
+			var caseBob = message.content.substr(8, 9).toUpperCase() + "" + message.content.substr(9).toLowerCase()
 
 			console.log(message.content.substr(8).toLowerCase())
 			if (name_to_number[lowerCaseBob] !== undefined){
