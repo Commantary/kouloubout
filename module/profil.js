@@ -94,8 +94,12 @@ got.get(bdd, {
 			thumbnail: {
 				url: message.author.avatarURL
 			},
-			title: "Profil de " + body[message.author.id].username
+			title: "Profil de " + message.author.username,
 			fields: [{
+				name: "Pseudo:",
+				value: body[message.author.id].username
+			},
+			{
 				name: "Votre bob principale:",
 				value: body[message.author.id].bob_principale
 			},
