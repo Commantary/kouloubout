@@ -22,7 +22,7 @@ client.on('message', message => {
 
     console.log("server: " + message.guild.name + " | channel: " + message.channel.name + " | rand: " + rand + " | randBob: " + randBob + " | author: " + message.author.username)
 
-    if (rand === 5)//&& message.author.id == "214846601066315776"){
+    if (rand === 5){//&& message.author.id == "214846601066315776"){
 
       var msg = message.channel.send({embed: {
         color: 65280,
