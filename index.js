@@ -16,12 +16,12 @@ client.on('ready', () => {
 
 client.on('message', message => {
 //----------------------------------------------------------------------------------------
-    var rand = Math.floor(Math.random() * 11);
+    var rand = Math.floor(Math.random() * 21);
     var randBob = Math.floor(Math.random() * bob.number);
     var queue_url = process.env.QUEUE_URL || process.argv[2]
 
     console.log("server: " + message.guild.name + " | channel: " + message.channel.name + " | rand: " + rand + " | randBob: " + randBob + " | author: " + message.author.username)
-    if (rand === 5 && message.author.bot == false){//&& message.author.id == "214846601066315776"){
+    if (rand === 10 && message.author.bot == false){//&& message.author.id == "214846601066315776"){
 
       var msg = message.channel.send({embed: {
         color: 65280,
