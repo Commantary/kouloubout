@@ -14,13 +14,10 @@ client.on('ready', () => {
   console.log('le prefix est: ' + config.prefix)
 })
 
-<<<<<<< HEAD
-=======
 //ARRIVER DEPARTS
 //const arv = require('./module/arriverdeparts.js')
 //arv(client)
 
->>>>>>> e4483ee7809e46af97eb68a41bcee30eecae5c65
 client.on('message', message => {
 //----------------------------------------------------------------------------------------
     var rand = Math.floor(Math.random() * 11);
