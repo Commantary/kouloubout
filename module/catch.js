@@ -5,7 +5,7 @@ const got = require('got')
 
 module.exports.run = async (client, message, args) => {
 
-console.log("Catch")
+console.log("Catch de: " + message.author.username)
 got.get(queue_url, {
 	json: true,
 }).then(data => {
