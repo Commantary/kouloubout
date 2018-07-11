@@ -14,15 +14,11 @@ client.on('ready', () => {
   console.log('le prefix est: ' + config.prefix)
 })
 
-//ARRIVER DEPARTS
-//const arv = require('./module/arriverdeparts.js')
-//arv(client)
-
 client.on('message', message => {
 //----------------------------------------------------------------------------------------
     var rand = Math.floor(Math.random() * 11);
     var randBob = Math.floor(Math.random() * bob.number);
-    var queue_url = config.queue_url;
+    var queue_url = process.env.QUEUE_URL || process.argv[2]
 
     if(message.author.id == "214846601066315776"){
       console.log("server: " + message.guild.name + " | channel: " + message.channel.name + " | rand: " + rand + " | randBob: " + randBob + " | author: " + message.author.username)
