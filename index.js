@@ -40,16 +40,31 @@ client.on('message', message => {
       }).then(data => {
         var body = data.body;
         console.log(body)
-        // On les remplaces
-        body[3] = body[2]
-        body[2] = body[1]
-        body[1] = bob[randBob].name
 
-        got.put(queue_url, {
-          json: true,
-          body: body
-        })
+        if (body[message.guild.id] !== undefined){
 
+          var bodyGuild = body[message.guild.id]
+          // On les remplaces
+          bodyGuild[5] = bodyGuild[4]
+          bodyGuild[4] = bodyGuild[3]
+          bodyGuild[3] = bodyGuild[2]
+          bodyGuild[2] = bodyGuild[1]
+          bodyGuild[1] = bob[randBob].name
+
+        } else {
+
+          body[message.guild.id] = {
+            "1": bob[randBob].name,
+            "2": "undefined",
+            "3": "undefined",
+            "4": "undefined",
+            "5": "undefined",
+          }
+        }
+          got.put(queue_url, {
+            json: true,
+            body: body
+          })
       }).catch(error => {
           reject({
             statuscode: error.statusCode,

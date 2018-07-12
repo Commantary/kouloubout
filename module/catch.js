@@ -21,31 +21,38 @@ got.get(queue_url, {
 				var bobCaptured = body[1]
 				if (body2[message.author.id] !== undefined){
 
-					if (body2[message.author.id].bob_principale == "Aucun"){
-						body2[message.author.id].bob_principale = body[1]
-						console.log("Nouveau bob principale")
+					if (body[message.guild.id] !== undefined){
 
-						var name_to_number = require('./json/name_to_number.json')
-						name_to_number = name_to_number[body[1]]
-						console.log("name_to_number: " + name_to_number)
-						body2[message.author.id].bob[name_to_number].number++
+						if (body2[message.author.id].bob_principale == "Aucun"){
+							body2[message.author.id].bob_principale = body[1]
+							console.log("Nouveau bob principale")
 
-					} else {
+							var name_to_number = require('./json/name_to_number.json')
+							name_to_number = name_to_number[body[1]]
+							console.log("name_to_number: " + name_to_number)
+							body2[message.author.id].bob[name_to_number].number++
 
-						var name_to_number = require('./json/name_to_number.json')
-						name_to_number = name_to_number[body[1]]
-						console.log("name_to_number: " + name_to_number)
-						body2[message.author.id].bob[name_to_number].number++
+						} else {
+
+							var name_to_number = require('./json/name_to_number.json')
+							name_to_number = name_to_number[body[1]]
+							console.log("name_to_number: " + name_to_number)
+							body2[message.author.id].bob[name_to_number].number++
+						}
+
+						var bodyGuild = body[message.guild.id]
+						bodyGuild[1] = bodyGuild[2]
+						bodyGuild[2] = bodyGuild[3]
+						bodyGuild[3] = bodyGuild[4]
+						bodyGuild[4] = bodyGuild[5]
+						bodyGuild[5] = "undefined";
+
+						message.channel.send({embed: {
+							color: 15922601,
+							description: "Vous avez capturer le bob " + bobCaptured + " !"
+						}})
 					}
 
-					body[1] = body[2]
-					body[2] = body[3]
-					body[3] = "undefined";
-
-					message.channel.send({embed: {
-						color: 15922601,
-						description: "Vous avez capturer le bob " + bobCaptured + " !"
-					}})
 				} else {
 					message.channel.send({embed: {
 						color: 15922601,
@@ -63,6 +70,12 @@ got.get(queue_url, {
 					json: true,
 					body: body2
 				})
+
+			} else {
+				message.channel.send({embed: {
+					color: 15922601,
+					description: "Vous n'avez pas de profil Bober!"
+				}})
 			}
 		})
 
