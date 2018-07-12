@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
       let argsFalse = message.content.trim().split(/ +/g)
       let argsTrue = message.content.slice(argsFalse[0].length)
 
-      if(message.author.id === '228938468498210816'){
+      if(message.author.id === '296716897968324609'){
         const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username + '-|- Modérateur', message.author.avatarURL)
       .setColor(12515201)
