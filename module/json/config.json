@@ -1,3 +1,5 @@
 {
-  "prefix":":"
+  "prefix":":",
+  "good_color": 15922601,
+  "bad_color": 16406616
 }
