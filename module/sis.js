@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 
       if(message.author.id === '296716897968324609'){
         const embed = new Discord.RichEmbed()
-      .setAuthor(message.author.username + '-|- Modérateur', message.author.avatarURL)
+      .setAuthor(message.author.username + ' -|- Modérateur', message.author.avatarURL)
       .setColor(12515201)
       .setFooter(message.guild.name, message.guild.iconURL,)
       .setDescription(argsTrue)
@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
 
       if(message.author.id === '214846601066315776'){
         const embed = new Discord.RichEmbed()
-      .setAuthor(message.author.username + '-|- Créateur', message.author.avatarURL)
+      .setAuthor(message.author.username + ' -|- Créateur', message.author.avatarURL)
       .setColor(12515201)
       .setFooter(message.guild.name, message.guild.iconURL,)
       .setDescription(argsTrue)
