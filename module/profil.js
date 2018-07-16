@@ -71,17 +71,17 @@ got.get(bdd, {
 		} else {
 			var number10 = 0
 		}
-		if (bodyNumber(11) != "0"){ // 10
+		if (bodyNumber(11) != "0"){ // 11
 			var number11 = 1
 		} else {
 			var number11 = 0
 		}
-		if (bodyNumber(12) != "0"){ // 10
+		if (bodyNumber(12) != "0"){ // 12
 			var number12 = 1
 		} else {
 			var number12 = 0
 		}
-		if (bodyNumber(13) != "0"){ // 10
+		if (bodyNumber(13) != "0"){ // 13
 			var number13 = 1
 		} else {
 			var number13 = 0
