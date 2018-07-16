@@ -25,10 +25,6 @@ client.on('message', message => {
 
       var msg = message.channel.send({embed: {
         color: 65280,
-        /*author: {
-          name: 'Nouveaux seigneur !',
-          icon_url: bob[randBob].url
-        },*/
         thumbnail: {
           url: bob[randBob].url
         },

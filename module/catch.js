@@ -10,15 +10,15 @@ got.get(queue_url, {
 	json: true,
 }).then(data => {
 	var body = data.body;
-	if (body[1] != undefined && body[1] != "undefined"){
-		console.log(body[1])
+	if (body[message.guild.id][1] != "undefined"){
+		console.log(body[message.guild.id][1])
 		got.get(bdd, {
 			json: true,
 		}).then(data => {
 			var body2 = data.body;
 
 			if (body2[message.author.id] !== undefined){
-				var bobCaptured = body[1]
+				var bobCaptured = body[message.guild.id][1]
 				if (body2[message.author.id] !== undefined){
 
 					if (body[message.guild.id] !== undefined){
@@ -28,14 +28,14 @@ got.get(queue_url, {
 							console.log("Nouveau bob principale")
 
 							var name_to_number = require('./json/name_to_number.json')
-							name_to_number = name_to_number[body[1]]
+							name_to_number = name_to_number[bodyGuild[1]]
 							console.log("name_to_number: " + name_to_number)
 							body2[message.author.id].bob[name_to_number].number++
 
 						} else {
-
+							var bodyGuild = body[message.guild.id]
 							var name_to_number = require('./json/name_to_number.json')
-							name_to_number = name_to_number[body[1]]
+							name_to_number = name_to_number[bodyGuild[1]]
 							console.log("name_to_number: " + name_to_number)
 							body2[message.author.id].bob[name_to_number].number++
 						}
