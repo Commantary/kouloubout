@@ -125,10 +125,7 @@ got.get(bdd, {
 	}
 
 }).catch(error => {
-		reject({
-			statuscode: error.statusCode,
-			message: error.statusMessage
-	});
+	console.log(error)
 })
 
 
