@@ -14,6 +14,9 @@ got.get(bdd, {
 		body[message.author.id] = {
 			"username": message.author.username,
 			"bob_principale": "Aucun",
+			"argent": "0",
+			"canTakeArgent": "true",
+			"ballz": "9",
 			"bob": {
 				"0": {
 					"number": "0",
@@ -54,6 +57,22 @@ got.get(bdd, {
 				"9": {
 					"number": "0",
 					"name": "Clay U.S.B"
+				},
+				"10": {
+					"number": "0",
+					"name": "Skill"
+				},
+				"11": {
+					"number": "0",
+					"name": "Lennon"
+				},
+				"12": {
+					"number": "0",
+					"name": "Marley"
+				},
+				"14": {
+					"number": "0",
+					"name": "Kermit défoncé"
 				}
 			}
 		}

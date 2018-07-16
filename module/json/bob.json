@@ -1,19 +1,19 @@
 {
 	"0": {
 		"name": "Pravou",
-		"url": "https://cdn.discordapp.com/avatars/296716897968324609/51cde12f7c48d5a46cdfb0989315461b.png"
+		"url": "https://cdn.discordapp.com/attachments/466745822097178627/467082347360157709/0.png"
 	},
 	"1": {
 		"name": "Zouzou",
-		"url": "https://cdn.discordapp.com/attachments/433713414523846677/465620715132026890/zouzou.png"
+		"url": "https://cdn.discordapp.com/attachments/466745822097178627/467082417992105985/1.png"
 	},
 	"2": {
 		"name": "Lanaine",
-		"url": "https://cdn.discordapp.com/avatars/302123707449475072/44fdbae84d5a5778dc38d4110a53b065.png"
+		"url": "https://cdn.discordapp.com/attachments/466745822097178627/467082487483596800/2.png"
 	},
 	"3": {
 		"name": "Zbeuboux",
-		"url": "https://que-signifie.org/wp-content/uploads/2016/08/mojito.jpg"
+		"url": "https://cdn.discordapp.com/attachments/466745822097178627/467082572493750282/3.jpg"
 	},
 	"4": {
 		"name": "Tirazux",
@@ -39,5 +39,21 @@
 		"name": "Clay U.S.B",
 		"url": "https://cdn.discordapp.com/attachments/433713414523846677/466341348249698304/9.png"
 	},
-	"number": 10
+	"10": {
+		"name": "Skill",
+		"url": "https://cdn.discordapp.com/attachments/466745822097178627/468144188945334272/10.jpg"
+	},
+	"11": {
+		"name": "Lennon",
+		"url": "https://cdn.discordapp.com/attachments/468502726641188874/468502830651801601/bob_lennon.jpg"
+	},
+	"12": {
+		"name": "Marley",
+		"url": "https://cdn.discordapp.com/attachments/468502726641188874/468503285444247563/Bob_marley.jpg"
+	},
+	"13": {
+		"name": "Kermit défoncé",
+		"url": "https://cdn.discordapp.com/attachments/468502726641188874/468503499731107865/kermit_fonsde.png"
+	},
+	"number": 14
 }
