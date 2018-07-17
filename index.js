@@ -18,10 +18,7 @@ client.on('ready', () => {
 
           for(let i in body) {
               let time = body[i].time;
-              console.log(i)
               if(Date.now() > time) {
-                  console.log(`${body[i].username} peut recuperer son argent`)
-
                   got.get(bdd, {
                       json: true,
                   }).then(data => {
@@ -46,7 +43,7 @@ client.on('ready', () => {
       }).catch(error => {
           console.log(error)
       })
-  }, 5000)
+  }, 2000)
 
   client.user.setActivity('I PLAY POKEMOUNE GOOOOO EVERYDAYYYYYY', { type: "LISTENING" })
   console.log('-------------------------------------')
