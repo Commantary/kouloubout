@@ -4,9 +4,50 @@ const client = new discord.Client()
 const config = require('./module/json/config.json')
 const bob = require('./module/json/bob.json')
 const got = require('got')
+const money = process.env.MONEY || process.argv[2]
+const bdd = process.env.BDD || process.argv[2]
 
 // On start le bot
 client.on('ready', () => {
+
+  client.setInterval(() => {
+      got.get(money, {
+          json: true,
+      }).then(data => {
+          var body = data.body;
+
+          for(let i in body) {
+              let time = body[i].time;
+              console.log(i)
+              if(Date.now() > time) {
+                  console.log(`${body[i].username} peut recuperer son argent`)
+
+                  got.get(bdd, {
+                      json: true,
+                  }).then(data => {
+                      var bodyBdd = data.body;
+                      bodyBdd[i].canTakeArgent = "true"
+
+                      //put here
+                      got.put(bdd, {
+                          json: true,
+                          body: bodyBdd
+                      })
+                  }).catch(error => {
+                      console.log(error)
+                  })
+                  //Le put
+                  got.put(money, {
+                      json: true,
+                      body: body
+                  })
+              }
+          }
+      }).catch(error => {
+          console.log(error)
+      })
+  }, 5000)
+
   client.user.setActivity('I PLAY POKEMOUNE GOOOOO EVERYDAYYYYYY', { type: "LISTENING" })
   console.log('-------------------------------------')
   console.log('     [!] Kouloubout connecté [!]     ')
