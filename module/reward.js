@@ -19,6 +19,14 @@ got.get(bdd, {
 	}).then(data => {
 		var bodyMoney = data.body;
 
+		if (bodyMoney[message.author.id] == undefined){
+			bodyMoney[message.author.id] = {
+				"time": 0,
+				"username": message.author.username,
+				"heure": Date.getHours()
+			}
+		}
+
 		if (bodyBdd[message.author.id].canTakeArgent !== "false" && Date.now() > bodyMoney[message.author.id].time){
 
 			bodyBdd[message.author.id].argent += 60
