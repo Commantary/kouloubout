@@ -35,8 +35,7 @@ got.get(bdd, {
 			if (bodyMoney[message.author.id] == undefined){
 				bodyMoney[message.author.id] = {
 					"time": "",
-					"username": message.author.username,
-					"heure": Date.getHours()
+					"username": message.author.username
 				}
 			}
 
