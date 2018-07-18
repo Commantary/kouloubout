@@ -66,34 +66,34 @@ module.exports.run = async (client, message, args) => {
 
     return message.channel.send({embed})
     }
-  }).catch(error => {
-    console.log(error)
-  })
+
 
   if(message.guild.channels.exists('name', 'discussion')){
     client.guilds.map(g=>sis(g)) // ON EXECUTE
   } else {
 
-    var comabot = message.guild.roles.find('name', 'kouloubout')
+      var comabot = message.guild.roles.find('name', 'kouloubout')
 
-    if(comabot.hasPermission('MANAGE_CHANNELS')){
-      message.guild.createChannel('discussion', 'text') // ON CREER LE CHANNEL
-    .then(message.channel.send({embed: { // ON ENVOIE LE MESSAGE
-      title: 'Info',
-      color: 12434877,
-      description: 'Le channel `sis` a été créer, réessayer...'
-    }})) // FIN DE L'EMBED
-    .catch(console.error) // SI IL Y A UNE ERREUR
-  } else {
-    message.channel.send({embed: { // ON ENVOIE LE MESSAGE
-      title: 'Info',
-      color: 12434877,
-      description: 'Je ne peux pas créer le channel `sis`, créer le pour utilisé la commande `+sis`'
-    }})
+      if(comabot.hasPermission('MANAGE_CHANNELS')){
+        message.guild.createChannel('discussion', 'text') // ON CREER LE CHANNEL
+      .then(message.channel.send({embed: { // ON ENVOIE LE MESSAGE
+        title: 'Info',
+        color: 12434877,
+        description: 'Le channel `sis` a été créer, réessayer...'
+      }})) // FIN DE L'EMBED
+      .catch(console.error) // SI IL Y A UNE ERREUR
+    } else {
+      message.channel.send({embed: { // ON ENVOIE LE MESSAGE
+        title: 'Info',
+        color: 12434877,
+        description: 'Je ne peux pas créer le channel `sis`, créer le pour utilisé la commande `+sis`'
+      }})
 
+    }
   }
-  }
 
-
+  }).catch(error => {
+    console.log(error)
+  })
 
 } // FIN DU MODULE EXPORTS
