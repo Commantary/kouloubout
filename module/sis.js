@@ -10,26 +10,6 @@ module.exports.run = async (client, message, args) => {
       let argsFalse = message.content.trim().split(/ +/g)
       let argsTrue = message.content.slice(argsFalse[0].length)
 
-      got.get(ban, {
-        json: true,
-      }).then(data => {
-        var body = data.body;
-        var array = []
-        a = 0
-        for(let i in body) {
-          array[i] = i
-          a++
-        }
-        console.log(array)
-        if (array[message.author.id] !== undefined){
-          const embed = new Discord.RichEmbed()
-        .setAuthor("Ban sis")
-        .setColor(config.bad_color)
-        .setDescription("Vous ne pouvez pas envoyer de message car vous êtes ban")
-
-        return chaine.send({embed})
-        }
-
       if(message.author.id === '296716897968324609' && array[message.author.id] == undefined){
         const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username + ' -|- Modérateur', message.author.avatarURL)
@@ -58,9 +38,7 @@ module.exports.run = async (client, message, args) => {
       .setDescription(argsTrue)
 
       chaine.send({embed})
-      }).catch(error => {
-        console.log(error)
-      })
+
     }
   } // FIN DE LA FONCTION
 
@@ -68,6 +46,29 @@ module.exports.run = async (client, message, args) => {
     color: 12434877,
     description: 'Vous devez spécifier un message à envoyé !'
   }})
+
+  got.get(ban, {
+    json: true,
+  }).then(data => {
+    var body = data.body;
+    var array = []
+    a = 0
+    for(let i in body) {
+      array[i] = i
+      a++
+    }
+    console.log(array)
+    if (array[message.author.id] !== undefined){
+      const embed = new Discord.RichEmbed()
+    .setAuthor("Ban sis")
+    .setColor(config.bad_color)
+    .setDescription("Vous ne pouvez pas envoyer de message car vous êtes ban")
+
+    return chaine.send({embed})
+    }
+  }).catch(error => {
+    console.log(error)
+  })
 
   if(message.guild.channels.exists('name', 'discussion')){
     client.guilds.map(g=>sis(g)) // ON EXECUTE
