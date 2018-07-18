@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args) => {
     .setColor(config.bad_color)
     .setDescription("Vous ne pouvez pas envoyer de message car vous êtes ban")
 
-    return chaine.send({embed})
+    return message.channel.send({embed})
     }
   }).catch(error => {
     console.log(error)
