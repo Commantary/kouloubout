@@ -1,4 +1,7 @@
 const Discord = require('discord.js')
+const config = require('./json/config.json')
+const ban = process.env.BAN || process.argv[2]
+const got = require('got')
 
 module.exports.run = async (client, message, args) => {
   function sis(guild){ // FUNCTION POUR SEND LE MESSAGE
@@ -7,7 +10,27 @@ module.exports.run = async (client, message, args) => {
       let argsFalse = message.content.trim().split(/ +/g)
       let argsTrue = message.content.slice(argsFalse[0].length)
 
-      if(message.author.id === '296716897968324609'){
+      got.get(ban, {
+        json: true,
+      }).then(data => {
+        var body = data.body;
+        var array = []
+        a = 0
+        for(let i in body) {
+          array[i] = i
+          a++
+        }
+        console.log(array)
+        if (array[message.author.id] !== undefined){
+          const embed = new Discord.RichEmbed()
+        .setAuthor("Ban sis")
+        .setColor(config.bad_color)
+        .setDescription("Vous ne pouvez pas envoyer de message car vous êtes ban")
+
+        return chaine.send({embed})
+        }
+
+      if(message.author.id === '296716897968324609' && array[message.author.id] == undefined){
         const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username + ' -|- Modérateur', message.author.avatarURL)
       .setColor(12515201)
@@ -17,7 +40,8 @@ module.exports.run = async (client, message, args) => {
       return chaine.send({embed})
       }
 
-      if(message.author.id === '214846601066315776'){
+      if(message.author.id === '214846601066315776' && array[message.author.id] == undefined){
+      console.log(array[message.author.id])
         const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username + ' -|- Créateur', message.author.avatarURL)
       .setColor(12515201)
@@ -30,10 +54,13 @@ module.exports.run = async (client, message, args) => {
       const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username, message.author.avatarURL)
       .setColor(12515201)
-      .setFooter(message.guild.name, message.guild.iconURL,)
+      .setFooter(message.guild.name + " | " + message.author.id, message.guild.iconURL,)
       .setDescription(argsTrue)
 
       chaine.send({embed})
+      }).catch(error => {
+        console.log(error)
+      })
     }
   } // FIN DE LA FONCTION
 
