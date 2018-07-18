@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
       let argsFalse = message.content.trim().split(/ +/g)
       let argsTrue = message.content.slice(argsFalse[0].length)
 
-      if(message.author.id === '296716897968324609' && array[message.author.id] == undefined){
+      if(message.author.id === '296716897968324609' || message.author.id === '394996621655670784'){
         const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username + ' -|- Modérateur', message.author.avatarURL)
       .setColor(12515201)
@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
       return chaine.send({embed})
       }
 
-      if(message.author.id === '214846601066315776' && array[message.author.id] == undefined){
+      if(message.author.id === '214846601066315776'){
       console.log(array[message.author.id])
         const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username + ' -|- Créateur', message.author.avatarURL)
