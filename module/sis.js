@@ -21,7 +21,6 @@ module.exports.run = async (client, message, args) => {
       }
 
       if(message.author.id === '214846601066315776'){
-      console.log(array[message.author.id])
         const embed = new Discord.RichEmbed()
       .setAuthor(message.author.username + ' -|- Créateur', message.author.avatarURL)
       .setColor(12515201)
