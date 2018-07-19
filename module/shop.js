@@ -12,7 +12,7 @@ message.channel.send({embed: {
 	color: config.good_color,
 	title: "Magasin",
 	fields: [{
-		name: "Ballz",
+		name: "Ballz:",
 		value: "Prix: 5$"
 	}
 	]
