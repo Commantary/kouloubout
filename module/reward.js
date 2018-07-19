@@ -28,7 +28,7 @@ got.get(bdd, {
 
 		if (bodyBdd[message.author.id].canTakeArgent !== "false" && Date.now() > bodyMoney[message.author.id].time){
 
-			bodyBdd[message.author.id].argent += 60
+			bodyBdd[message.author.id].argent += 30
 			bodyBdd[message.author.id].canTakeArgent = "false"
 
 			if (bodyMoney[message.author.id] == undefined){
