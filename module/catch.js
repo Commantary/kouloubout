@@ -53,7 +53,7 @@ got.get(queue_url, {
 								bodyGuild[4] = bodyGuild[5]
 								bodyGuild[5] = "undefined";
 
-								bodyBdd[message.author.id].ballz--
+								body2[message.author.id].ballz--
 
 								message.channel.send({embed: {
 									color: 15922601,
