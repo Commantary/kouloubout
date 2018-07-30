@@ -28,9 +28,10 @@ got.get(queue_url, {
 							if (body2[message.author.id].ballz > 0){
 
 								if (body2[message.author.id].bob_principale == "Aucun"){
-
-									body2[message.author.id].bob_principale = body[1]
+									console.log(body[message.guild.id][1])
+									body2[message.author.id].bob_principale = body[message.guild.id][1]
 									console.log("Nouveau bob principale")
+									var bodyGuild = body[message.guild.id]
 
 									var name_to_number = require('./json/name_to_number.json')
 									name_to_number = name_to_number[bodyGuild[1]]
