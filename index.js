@@ -45,7 +45,7 @@ client.on('ready', () => {
       })
   }, 2000)
 
-  client.user.setActivity('I PLAY POKEMOUNE GOOOOO EVERYDAYYYYYY', { type: "LISTENING" })
+  client.user.setActivity('Je suis la pour traduire juste <3', { type: "LISTENING" })
   console.log('-------------------------------------')
   console.log('     [!] Kouloubout connecté [!]     ')
   console.log('-------------------------------------')
@@ -61,7 +61,7 @@ client.on('message', message => {
     console.log("server: " + message.guild.name + " | channel: " + message.channel.name + " | rand: " + rand + " | randBob: " + randBob + " | author: " + message.author.username)
     if (rand === 10 && message.author.bot == false){//&& message.author.id == "214846601066315776"){
 
-      var msg = message.channel.send({embed: {
+      /*var msg = message.channel.send({embed: {
         color: 65280,
         thumbnail: {
           url: bob[randBob].url
@@ -83,7 +83,7 @@ client.on('message', message => {
           bodyGuild[4] = bodyGuild[3]
           bodyGuild[3] = bodyGuild[2]
           bodyGuild[2] = bodyGuild[1]
-          bodyGuild[1] = bob[randBob].name
+          bodyGuild[1] = bob[randBob].name*/
 
         } else {
 
